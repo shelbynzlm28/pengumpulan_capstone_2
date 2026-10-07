@@ -40,37 +40,6 @@ def Harga_Jual(harga_normal, diskon):
     return harga_jual
 
 
-# def Tabel_Buah():
-#     print("\nTabel Master Buah\n")
-#     print("=" * 73)
-#     print("|Index\t|ID Buah|Nama Buah\t|Qty Stok (kg)\t|Harga Jual Normal\t|")
-#     print("=" * 73)
-
-#     buah_sudah_ditampilkan = []
-#     index = 0
-
-#     for data in listDictBuah:
-#         if data["ID_Buah"] not in buah_sudah_ditampilkan:
-#             total_qty = 0
-#             for data2 in listDictBuah:
-#                 if data2["ID_Buah"] == data["ID_Buah"]:
-#                     total_qty += data2["Qty_datang"]
-
-#             umur_buah = Umur_Buah(data["tgl_datang"])
-#             diskon = diskon_buah(umur_buah)
-#             harga_jual = Harga_Jual(data["Harga_Normal"],diskon)
-
-#             print(
-#                 f"|{index}"
-#                 f"\t|{data['ID_Buah']:<5}"
-#                 f"\t|{data['nama']}"
-#                 f"\t\t|{total_qty}"
-#                 f"\t\t|Rp{harga_jual:,.0f}"
-#                 f"\t\t|")
-
-#             buah_sudah_ditampilkan.append(data["ID_Buah"])
-#             index += 1
-#     print("=" * 73)
 def Tabel_Buah():
     print("\nTabel Master Buah\n")
     print("=" * 73)
@@ -106,67 +75,6 @@ def Tabel_Buah():
             buah_sudah_ditampilkan.append(data["ID_Buah"])
             index += 1
     print("=" * 73)
-# def Tabel_Batch_Buah():
-#     print("\nTabel Batch Buah\n")
-
-#     print("Pilihan Tampilan:")
-#     print("1. Semua Batch")
-#     print("2. Berdasarkan ID Buah")
-#     print("3. Berdasarkan Batch")
-
-#     pilihan = input("Masukkan pilihan tampilan: ")
-#     if pilihan == "1":
-#         data_filter = listDictBuah.copy()
-#     elif pilihan == "2":
-#         id_buah = input("Masukkan ID Buah: ").capitalize()
-#         data_filter = []
-#         for data in listDictBuah:
-#             if data["ID_Buah"] == id_buah:
-#                 data_filter.append(data)
-#     elif pilihan == "3":
-#         id_batch = input("Masukkan Batch: ").capitalize()
-#         data_filter = []
-#         for data in listDictBuah:
-#             if data["Batch"] == id_batch:
-#                 data_filter.append(data)
-
-#     else:
-#         print("Pilihan tidak tersedia.")
-#         return
-
-#     if len(data_filter) == 0:
-#         print("Data tidak ditemukan.")
-#         return
-
-#     data_filter = sorted(data_filter,key=lambda x: x["Batch"])
-
-#     print("\nTabel Data Buah\n")
-#     print("=" * 137)
-#     print(
-#         "|Batch\t|ID Buah|Nama Buah\t"
-#         "|Tanggal Datang\t|Qty Datang\t|Umur Buah\t"
-#         "|Kondisi Buah\t|Harga Normal\t|Diskon\t|Harga Jual\t|"
-#     )
-
-#     print("=" * 137)
-#     for i in range(len(data_filter)):
-#         umur_buah = Umur_Buah(data_filter[i]["tgl_datang"])
-#         kondisi_buah = Kondisi_Buah(umur_buah)
-#         diskon = diskon_buah(umur_buah)
-#         harga_jual = Harga_Jual(data_filter[i]["Harga_Normal"],diskon)
-#         print(
-#             f"|{data_filter[i]['Batch']:<5}"
-#             f"\t|{data_filter[i]['ID_Buah']:<5}"
-#             f"\t|{data_filter[i]['nama']}\t"
-#             f"\t|{data_filter[i]['tgl_datang']}"
-#             f"\t|{data_filter[i]['Qty_datang']}"
-#             f"\t\t|{umur_buah:>4} hari"
-#             f"\t|{kondisi_buah:<15}"
-#             f"|Rp{data_filter[i]['Harga_Normal']:,.0f}"
-#             f"\t|{diskon}%"
-#             f"\t|Rp{harga_jual:,.0f}"
-#             f"\t|")
-#     print("=" * 137)
 def Tabel_Batch_Buah():
 
     print("\nTabel Batch Buah\n")
