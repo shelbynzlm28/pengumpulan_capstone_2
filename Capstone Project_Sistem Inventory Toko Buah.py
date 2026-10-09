@@ -247,7 +247,7 @@ def Menu_Update():
             break
 
     if data_ditemukan is None:
-        print("Data batch tidak ditemukan.")
+        print("Data tidak ditemukan.")
         return
 
     print("\nData ditemukan:")
